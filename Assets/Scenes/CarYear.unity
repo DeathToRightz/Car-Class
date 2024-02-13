@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1417856084}
         m_TargetAssemblyTypeName: Car, Assembly-CSharp
-        m_MethodName: ShowyearButton
+        m_MethodName: OnClickTakeYear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -866,7 +866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289, y: -362}
+  m_AnchoredPosition: {x: -300, y: -308}
   m_SizeDelta: {x: 520.3519, y: 203.377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192612363
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Enter Year
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1089,8 +1089,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1139,6 +1139,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310760583}
   m_CullTransparentMesh: 1
+--- !u!1 &1398507450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398507452}
+  - component: {fileID: 1398507451}
+  m_Layer: 0
+  m_Name: TestCar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1398507451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398507450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2082f462aaa2dd49b052366f4b3882e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carYearInput: {fileID: 0}
+  carYearTxt: {fileID: 0}
+  carMakeTxt: {fileID: 1131789869}
+  carMakeInput: {fileID: 1192612363}
+--- !u!4 &1398507452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398507450}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 612.98315, y: 215.2053, z: 3.0408392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417856083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,8 +1216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0189f12d1334a8448badc066bc7d603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yearInput: {fileID: 1192612363}
-  carYearTxt: {fileID: 1131789869}
 --- !u!4 &1417856085
 Transform:
   m_ObjectHideFlags: 0
@@ -1338,7 +1384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter year of car...
+  m_text: Enter Year of car...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1529,3 +1575,4 @@ SceneRoots:
   - {fileID: 1417856085}
   - {fileID: 2015793747}
   - {fileID: 544778637}
+  - {fileID: 1398507452}

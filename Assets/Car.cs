@@ -3,14 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 public class Car : MonoBehaviour
 {
-    [SerializeField] TMP_InputField _yearInput;
+    /*[SerializeField] TMP_InputField yearInput;
     [SerializeField] TMP_Text carYearTxt;
+    [SerializeField] TMP_Text carMakeTxt;
+    [SerializeField] TMP_InputField carMakeInput;*/
+
+    private void Start()
+    {
+       
+
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            //Debug.Log(testCar.IncreaseSpeed());
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            //Debug.Log(testCar.DecreaseSpeed());
+        }
+    }
     public class TypeofCar
     {
         
-       private int _year;
+        private int _year;
        private string _make;
        private int _maxSpeed = 100;
        private int _currentSpeed = 0;
@@ -24,13 +44,18 @@ public class Car : MonoBehaviour
         {
             get
             {
-                
                 return _year;
+                
             }
             set
             {
-               
-                _year = value;
+                if (value >= 1886 && value <=2024 )
+                {
+                   
+                     _year = value;
+                }
+                
+                
             }
         }
         public string Make
@@ -59,29 +84,29 @@ public class Car : MonoBehaviour
                 return _currentSpeed -= 10;
             }
             return _currentSpeed;
-        }     
-    }
-    TypeofCar carOne = new TypeofCar(2001, "Nissan");
-   
-    private void Start()
-    {
+        }
+
+
        
-        //carOne.Make = "Toyota";     
     }
-    private void Update()
+    
+    
+    public void OnClickTakeYear()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Debug.Log(carOne.IncreaseSpeed());
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Debug.Log(carOne.DecreaseSpeed());
-        }
+ 
+            Debug.Log("Click");
+       
+            /*testCar.Year = int.Parse(yearInput.text);
+            carYearTxt.text = carOne.Year.ToString();*/
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
-    public void ShowyearButton()
+
+    public void OnClickTakeMake()
     {
-        carOne.Year = int.Parse(_yearInput.text);
-        carYearTxt.text = carOne.Year.ToString();
+        Debug.Log("Click");
+
     }
+    
+    
 }
