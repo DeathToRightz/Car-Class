@@ -1,5 +1,7 @@
 
 
+
+
 public class Car 
 {
    
@@ -10,8 +12,10 @@ public class Car
       
         public Car(int year, string make) 
         {
-            _year = year;
-            _make = make;
+            /*_year = year;
+            _make = make;*/
+            Year = year;
+            Make = make;
          
         }  
         public int Year
@@ -28,23 +32,43 @@ public class Car
                    
                      _year = value;
                 }
-             
+            else if (value < 1886)
+            {
+
+                value = 1886;
+                _year = value;
+
+            }
+             else if(value > 2024)
+            {
+                value = 2024;
+                _year = value;
+
+            }
            
                 
             }
         }
-        public string Make
+    public string Make
+    {
+        get
         {
-            get
+            return _make;
+        }
+        set
+        {
+
+            if (value != "")
             {
-                return _make;
-            }
-            set
-            {              
                 _make = value;
             }
+            else
+            {
+                _make = "";
+            }
         }
-        public int IncreaseSpeed()
+    }
+    public int IncreaseSpeed()
         {
            if(_currentSpeed < _maxSpeed)
             {

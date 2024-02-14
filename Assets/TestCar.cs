@@ -12,15 +12,15 @@ public class TestCar : MonoBehaviour
     [SerializeField] TMP_InputField carMakeInput;
     [SerializeField] TMP_Text speedText;
     public GameObject yearCanvas,createCanvas,makeCanvas;
-    string carMake;
-    string carYear;
+    
    
     Car newCar;
     void Start()
     {
+        newCar = new Car(0000, "thing");
         yearCanvas.SetActive(false);
         createCanvas.SetActive(false);
-         
+
 
     }
 
@@ -34,42 +34,40 @@ public class TestCar : MonoBehaviour
             
             
            
-            speedText.text = newCar.IncreaseSpeed().ToString();
+            speedText.text =$"Current Speed {newCar.IncreaseSpeed().ToString()}";
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Debug.Log("Down");
            
-           speedText.text = newCar.DecreaseSpeed().ToString();
+           speedText.text = $"Current Speed {newCar.DecreaseSpeed().ToString()}";
         }
     }
     public void OnClickGetMake()
     {
-        carMake = carMakeInput.text;
-      
+        if(carMakeInput.text == "")
+        {
+            return;
+        }
+        
+        newCar.Make = carMakeInput.text;       
         makeCanvas.SetActive(false);
         yearCanvas.SetActive(true);
-       //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      
     }
     public void OnClickGetYear()
     {
-        carYear = carYearInput.text;
-        
+     
+        newCar.Year = int.Parse(carYearInput.text);   
         yearCanvas.SetActive(false);
-        createCanvas.SetActive(true);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        createCanvas.SetActive(true);    
 
     }
     
 
     public void OClickCreateCar()
     {
-        carMakeTxt.text = carMake;
-        carYearTxt.text = carYear;
-        
-        newCar = new Car (int.Parse (carYear), carMake.ToString());
-       
-       
-        
+        carMakeTxt.text = newCar.Make;
+        carYearTxt.text = newCar.Year.ToString();
     }
 }
