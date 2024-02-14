@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
+
+
 public class Car 
 {
    
@@ -15,7 +11,8 @@ public class Car
         public Car(int year, string make) 
         {
             _year = year;
-            _make = make;  
+            _make = make;
+         
         }  
         public int Year
         {

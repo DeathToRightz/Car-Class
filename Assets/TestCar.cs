@@ -10,9 +10,11 @@ public class TestCar : MonoBehaviour
     [SerializeField] TMP_Text carYearTxt;
     [SerializeField] TMP_Text carMakeTxt;
     [SerializeField] TMP_InputField carMakeInput;
+    [SerializeField] TMP_Text speedText;
     public GameObject yearCanvas,createCanvas,makeCanvas;
     string carMake;
     string carYear;
+   
     Car newCar;
     void Start()
     {
@@ -26,6 +28,20 @@ public class TestCar : MonoBehaviour
     void Update()
     {
         
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Debug.Log("up");
+            
+            
+           
+            speedText.text = newCar.IncreaseSpeed().ToString();
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Debug.Log("Down");
+           
+           speedText.text = newCar.DecreaseSpeed().ToString();
+        }
     }
     public void OnClickGetMake()
     {
@@ -50,6 +66,7 @@ public class TestCar : MonoBehaviour
     {
         carMakeTxt.text = carMake;
         carYearTxt.text = carYear;
+        
         newCar = new Car (int.Parse (carYear), carMake.ToString());
        
        
