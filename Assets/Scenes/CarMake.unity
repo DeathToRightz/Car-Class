@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1881,7 +1881,7 @@ GameObject:
   - component: {fileID: 1089949890}
   - component: {fileID: 1089949889}
   m_Layer: 5
-  m_Name: Year
+  m_Name: Car Year Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2287,7 +2287,7 @@ GameObject:
   - component: {fileID: 1417250777}
   - component: {fileID: 1417250776}
   m_Layer: 5
-  m_Name: Make
+  m_Name: Car Make Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2619,7 +2619,7 @@ GameObject:
   - component: {fileID: 1505720833}
   - component: {fileID: 1505720832}
   m_Layer: 5
-  m_Name: Create
+  m_Name: Create Car Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
